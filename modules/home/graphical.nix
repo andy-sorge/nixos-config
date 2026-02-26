@@ -5,6 +5,8 @@
     google-chrome
     discord
     spotify
+    
+    nerd-fonts.jetbrains-mono
   ];
   
   services.vicinae = {
