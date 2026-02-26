@@ -9,6 +9,9 @@
     # dolphin and deps
     kdePackages.qtsvg
     kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
     
     nerd-fonts.jetbrains-mono
   ];
