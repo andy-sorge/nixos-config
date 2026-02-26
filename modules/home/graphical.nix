@@ -6,6 +6,10 @@
     discord
     spotify
     
+    # dolphin and deps
+    kdePackages.qtsvg
+    kdePackages.dolphin
+    
     nerd-fonts.jetbrains-mono
   ];
   
