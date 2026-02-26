@@ -10,6 +10,11 @@
   
   services.thermald.enable = true;
   
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  
   environment.systemPackages = with pkgs; [
     brightnessctl
   ];
