@@ -8,7 +8,11 @@
     enable = true;
   };
   
-  services.thermald.enable = true;
+  services = {
+    gvfs.enable = true;
+    upower.enable = true;
+    thermald.enable = true;
+  };
   
   hardware.bluetooth = {
     enable = true;
