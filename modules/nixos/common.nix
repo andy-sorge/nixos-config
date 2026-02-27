@@ -52,6 +52,15 @@
     file
   ];
   
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      openssl
+    ];
+  };
+  
   nix.settings = {
     extra-substituters = [
       "https://vicinae.cachix.org"
