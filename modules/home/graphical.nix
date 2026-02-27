@@ -5,6 +5,8 @@
     google-chrome
     discord
     spotify
+    remmina
+    chirp
     
     # dolphin and deps
     kdePackages.qtsvg
