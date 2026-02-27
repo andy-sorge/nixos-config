@@ -9,9 +9,15 @@
     
     # c/c++
     gcc
+    cmake
+    gdb
     
     # nix
     nil
     nixd
+    
+    # rust
+    cargo
+    rustc
   ];
 }
