@@ -47,6 +47,7 @@
     wget
     git
     net-tools
+    zip
     unzip
     file
   ];
