@@ -7,6 +7,7 @@
     hyprpaper
     hyprcursor
     hyprshot
+    hyprpanel
     
     # app theming etc.
     nwg-look
