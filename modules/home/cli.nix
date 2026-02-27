@@ -8,5 +8,7 @@
     imagemagick
     cmatrix
     btop
+    sl
+    asciiquarium
   ];
 }
