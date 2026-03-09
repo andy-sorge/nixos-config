@@ -10,5 +10,6 @@
     # nix
     nil
     nixd
+    nixfmt
   ];
 }
