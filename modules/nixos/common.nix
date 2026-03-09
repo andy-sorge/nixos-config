@@ -6,6 +6,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "wireshark"
     ];
   };
   
@@ -13,6 +14,7 @@
     "nix-command"
     "flakes"
   ];
+  
   nix.settings.trusted-users = [
     "root"
     "asorge"
@@ -51,6 +53,11 @@
     unzip
     file
   ];
+  
+  programs.zsh.enable = true;
+  users.users.asorge = {
+    shell = pkgs.zsh;
+  };
   
   programs.nix-ld = {
     enable = true;
