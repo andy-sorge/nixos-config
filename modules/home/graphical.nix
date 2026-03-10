@@ -3,17 +3,11 @@
   home.packages = with pkgs; [
     kitty
     google-chrome
+    ungoogled-chromium
     discord
     spotify
     remmina
     chirp
-    
-    # dolphin and deps
-    kdePackages.qtsvg
-    kdePackages.dolphin
-    kdePackages.kio
-    kdePackages.kio-fuse
-    kdePackages.kio-extras
     
     nerd-fonts.jetbrains-mono
   ];

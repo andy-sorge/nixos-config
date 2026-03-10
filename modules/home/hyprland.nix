@@ -1,16 +1,23 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    kitty 
-    
+    kitty
+
     # utils
     hyprpaper
     hyprcursor
     hyprshot
     hyprpanel
-    
+
     # app theming etc.
     nwg-look
     qt6Packages.qt6ct
+
+    # dolphin and deps
+    kdePackages.qtsvg
+    kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
   ];
 } 
