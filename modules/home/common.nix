@@ -18,6 +18,7 @@
       init = "f() { nix flake init -t github:andy-sorge/nix-templates#$1 && direnv allow };f";
       ".." = "cd ..";
       rr = "rm -rf";
+      watch = "watch -n 0.1";
     };
     history.size = 10000;
     history.ignoreAllDups = true;
@@ -147,7 +148,7 @@
         disabled = false;
         symbol = "";
         style = "bg:color_bg3";
-        format = "[ $symbol $loaded/$allowed]($style)";
+        format = "[ $symbol $loaded/$allowed ]($style)";
       };
       time = {
         disabled = false;
