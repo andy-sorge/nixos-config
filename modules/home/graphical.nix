@@ -4,10 +4,11 @@
     kitty
     google-chrome
     ungoogled-chromium
-    discord
     spotify
     remmina
     chirp
+    blender
+    legcord
     
     nerd-fonts.jetbrains-mono
   ];
