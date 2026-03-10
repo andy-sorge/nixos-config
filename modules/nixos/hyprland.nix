@@ -1,13 +1,11 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
-  
+
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
@@ -29,6 +27,9 @@
     pulse.enable = true;
     # wireplumber.enable = true; # WirePlumber is default now
   };
-  
-  users.users.asorge.extraGroups = [ "video" "audio" ];
+
+  users.users.asorge.extraGroups = [
+    "video"
+    "audio"
+  ];
 }
