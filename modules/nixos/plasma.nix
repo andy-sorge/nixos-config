@@ -6,4 +6,11 @@
     enable = true;
     wayland.enable = true;
   };
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    kate
+    konsole
+    elisa
+    khelpcenter
+  ];
 }
