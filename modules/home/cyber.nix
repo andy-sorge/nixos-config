@@ -44,6 +44,7 @@
     hydra
     crunch
     cewl
+    johnny
     
     # forensic
     binwalk
