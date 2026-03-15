@@ -10,6 +10,7 @@
     
     ../../modules/home/cyber.nix
     ../../modules/home/development.nix
+    ../../modules/home/radio.nix
   ];
 
   home.username = "asorge";
