@@ -16,10 +16,12 @@
       update-reboot = "sudo nixos-rebuild boot && sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system && sudo nix-collect-garbage -d";
       c = "clear";
       e = "exit";
-      init = "f() { nix flake init -t github:andy-sorge/nix-templates#$1 && direnv allow };f";
+      init = "f() { mkdir -p $2 && cd $2 && nix flake init -t github:andy-sorge/nix-templates#$1 && direnv allow && git init };f";
       ".." = "cd ..";
       rr = "rm -rf";
       watch = "watch -n 0.1";
+      z = "zeditor .";
+      nuke = "sudo rm -rf";
     };
     history.size = 10000;
     history.ignoreAllDups = true;
