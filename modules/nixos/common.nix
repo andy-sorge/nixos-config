@@ -1,6 +1,16 @@
 { pkgs, ... }:
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 3;
+  };
+  boot.loader.efi.canTouchEfiVariables = true;
+  
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+  };
   
   users.users.asorge = {
     isNormalUser = true;
