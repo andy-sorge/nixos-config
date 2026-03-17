@@ -39,8 +39,8 @@
           ./hosts/brandon/configuration.nix
 
           ./modules/nixos/common.nix
-          # ./modules/nixos/laptop.nix
-          ./modules/nixos/plasma.nix
+          ./modules/nixos/laptop.nix
+          ./modules/nixos/graphical.nix
 
           home-manager.nixosModules.home-manager
           {
