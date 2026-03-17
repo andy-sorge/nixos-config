@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
   programs.plasma = {
     enable = true;
@@ -73,57 +73,6 @@
         "Meta+F1"
         "Ctrl+F1"
       ];
-      kwin."Switch to Desktop 10" = [ ];
-      kwin."Switch to Desktop 11" = [ ];
-      kwin."Switch to Desktop 12" = [ ];
-      kwin."Switch to Desktop 13" = [ ];
-      kwin."Switch to Desktop 14" = [ ];
-      kwin."Switch to Desktop 15" = [ ];
-      kwin."Switch to Desktop 16" = [ ];
-      kwin."Switch to Desktop 17" = [ ];
-      kwin."Switch to Desktop 18" = [ ];
-      kwin."Switch to Desktop 19" = [ ];
-      kwin."Switch to Desktop 2" = [
-        "Meta+F2"
-        "Ctrl+F2"
-      ];
-      kwin."Switch to Desktop 20" = [ ];
-      kwin."Switch to Desktop 21" = [ ];
-      kwin."Switch to Desktop 22" = [ ];
-      kwin."Switch to Desktop 23" = [ ];
-      kwin."Switch to Desktop 24" = [ ];
-      kwin."Switch to Desktop 25" = [ ];
-      kwin."Switch to Desktop 3" = [
-        "Meta+F3"
-        "Ctrl+F3"
-      ];
-      kwin."Switch to Desktop 4" = [
-        "Meta+F4"
-        "Ctrl+F4"
-      ];
-      kwin."Switch to Desktop 5" = [ ];
-      kwin."Switch to Desktop 6" = [ ];
-      kwin."Switch to Desktop 7" = [ ];
-      kwin."Switch to Desktop 8" = [ ];
-      kwin."Switch to Desktop 9" = [ ];
-      kwin."Switch to Next Desktop" = [ ];
-      kwin."Switch to Next Screen" = [ ];
-      kwin."Switch to Previous Desktop" = [ ];
-      kwin."Switch to Previous Screen" = [ ];
-      kwin."Switch to Screen 0" = [ ];
-      kwin."Switch to Screen 1" = [ ];
-      kwin."Switch to Screen 2" = [ ];
-      kwin."Switch to Screen 3" = [ ];
-      kwin."Switch to Screen 4" = [ ];
-      kwin."Switch to Screen 5" = [ ];
-      kwin."Switch to Screen 6" = [ ];
-      kwin."Switch to Screen 7" = [ ];
-      kwin."Switch to Screen Above" = [ ];
-      kwin."Switch to Screen Below" = [ ];
-      kwin."Switch to Screen to the Left" = [ ];
-      kwin."Switch to Screen to the Right" = [ ];
-      kwin."Toggle Night Color" = [ ];
-      kwin."Toggle Window Raise/Lower" = [ ];
       kwin."Walk Through Windows" = [
         "Meta+Tab"
         "Alt+Tab"
@@ -142,89 +91,6 @@
         "Meta+~"
         "Alt+~"
       ];
-      kwin."Walk Through Windows of Current Application Alternative" = [ ];
-      kwin."Walk Through Windows of Current Application Alternative (Reverse)" = [ ];
-      kwin."Window Above Other Windows" = [ ];
-      kwin."Window Below Other Windows" = [ ];
-      kwin."Window Close" = "Alt+F4";
-      kwin."Window Custom Quick Tile Bottom" = [ ];
-      kwin."Window Custom Quick Tile Left" = [ ];
-      kwin."Window Custom Quick Tile Right" = [ ];
-      kwin."Window Custom Quick Tile Top" = [ ];
-      kwin."Window Fullscreen" = [ ];
-      kwin."Window Grow Horizontal" = [ ];
-      kwin."Window Grow Vertical" = [ ];
-      kwin."Window Lower" = [ ];
-      kwin."Window Maximize" = "Meta+PgUp";
-      kwin."Window Maximize Horizontal" = [ ];
-      kwin."Window Maximize Vertical" = [ ];
-      kwin."Window Minimize" = "Meta+PgDown";
-      kwin."Window Move" = [ ];
-      kwin."Window Move Center" = [ ];
-      kwin."Window No Border" = [ ];
-      kwin."Window On All Desktops" = [ ];
-      kwin."Window One Desktop Down" = "Meta+Ctrl+Shift+Down";
-      kwin."Window One Desktop Up" = "Meta+Ctrl+Shift+Up";
-      kwin."Window One Desktop to the Left" = "Meta+Ctrl+Shift+Left";
-      kwin."Window One Desktop to the Right" = "Meta+Ctrl+Shift+Right";
-      kwin."Window One Screen Down" = [ ];
-      kwin."Window One Screen Up" = [ ];
-      kwin."Window One Screen to the Left" = [ ];
-      kwin."Window One Screen to the Right" = [ ];
-      kwin."Window Operations Menu" = "Alt+F3";
-      kwin."Window Pack Down" = [ ];
-      kwin."Window Pack Left" = [ ];
-      kwin."Window Pack Right" = [ ];
-      kwin."Window Pack Up" = [ ];
-      kwin."Window Quick Tile Bottom" = "Meta+Down";
-      kwin."Window Quick Tile Bottom Left" = [ ];
-      kwin."Window Quick Tile Bottom Right" = [ ];
-      kwin."Window Quick Tile Left" = "Meta+Left";
-      kwin."Window Quick Tile Right" = "Meta+Right";
-      kwin."Window Quick Tile Top" = "Meta+Up";
-      kwin."Window Quick Tile Top Left" = [ ];
-      kwin."Window Quick Tile Top Right" = [ ];
-      kwin."Window Raise" = [ ];
-      kwin."Window Resize" = [ ];
-      kwin."Window Shrink Horizontal" = [ ];
-      kwin."Window Shrink Vertical" = [ ];
-      kwin."Window to Desktop 1" = [ ];
-      kwin."Window to Desktop 10" = [ ];
-      kwin."Window to Desktop 11" = [ ];
-      kwin."Window to Desktop 12" = [ ];
-      kwin."Window to Desktop 13" = [ ];
-      kwin."Window to Desktop 14" = [ ];
-      kwin."Window to Desktop 15" = [ ];
-      kwin."Window to Desktop 16" = [ ];
-      kwin."Window to Desktop 17" = [ ];
-      kwin."Window to Desktop 18" = [ ];
-      kwin."Window to Desktop 19" = [ ];
-      kwin."Window to Desktop 2" = [ ];
-      kwin."Window to Desktop 20" = [ ];
-      kwin."Window to Desktop 21" = [ ];
-      kwin."Window to Desktop 22" = [ ];
-      kwin."Window to Desktop 23" = [ ];
-      kwin."Window to Desktop 24" = [ ];
-      kwin."Window to Desktop 25" = [ ];
-      kwin."Window to Desktop 3" = [ ];
-      kwin."Window to Desktop 4" = [ ];
-      kwin."Window to Desktop 5" = [ ];
-      kwin."Window to Desktop 6" = [ ];
-      kwin."Window to Desktop 7" = [ ];
-      kwin."Window to Desktop 8" = [ ];
-      kwin."Window to Desktop 9" = [ ];
-      kwin."Window to Next Desktop" = [ ];
-      kwin."Window to Next Screen" = "Meta+Shift+Right";
-      kwin."Window to Previous Desktop" = [ ];
-      kwin."Window to Previous Screen" = "Meta+Shift+Left";
-      kwin."Window to Screen 0" = [ ];
-      kwin."Window to Screen 1" = [ ];
-      kwin."Window to Screen 2" = [ ];
-      kwin."Window to Screen 3" = [ ];
-      kwin."Window to Screen 4" = [ ];
-      kwin."Window to Screen 5" = [ ];
-      kwin."Window to Screen 6" = [ ];
-      kwin."Window to Screen 7" = [ ];
       kwin.disableInputCapture = "Meta+Shift+Esc";
       kwin.view_actual_size = "Meta+0";
       kwin.view_zoom_in = [
@@ -370,5 +236,53 @@
     dataFile = {
 
     };
+    panels = [
+      {
+        alignment = "center";
+        floating = true;
+        height = 46;
+        hiding = "none";
+        lengthMode = "fill";
+        location = "bottom";
+        opacity = "adaptive";
+        widgets = [
+          {
+            name = "org.kde.plasma.kickoff";
+            config = {
+              General = {
+                icon = "nix-snowflake";
+                alphaSort = true;
+              };
+            };
+          }
+          "org.kde.plasma.pager"
+          {
+            name = "org.kde.plasma.icontasks";
+            config = {
+              General = {
+                launchers = [
+                  "applications:kitty.desktop"
+                  "applications:org.kde.dolphin.desktop"
+                  "applications:dev.zed.Zed.desktop"
+                  "applications:chromium-browser.desktop"
+                  "applications:spotify.desktop"
+                  "applications:legcord.desktop"
+                ];
+              };
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          "org.kde.plasma.digitalclock"
+          "org.kde.plasma.showdesktop"
+        ];
+      }
+    ];
+    
+    # remove when fixed in plasma-manager
+    startup.desktopScript."panels".preCommands = lib.mkForce ''
+          sleep 3
+          [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc
+        '';
   };
 }
