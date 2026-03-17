@@ -23,6 +23,9 @@
       z = "zeditor .";
       nuke = "sudo rm -rf";
     };
+    profileExtra = ''
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
     history.size = 10000;
     history.ignoreAllDups = true;
     history.path = "$HOME/.zsh_history";
