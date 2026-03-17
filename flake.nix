@@ -38,9 +38,9 @@
         modules = [
           ./hosts/brandon/configuration.nix
 
-          ./modules/nixos/common.nix
-          ./modules/nixos/laptop.nix
-          ./modules/nixos/graphical.nix
+          ./modules/system/common.nix
+          ./modules/system/laptop.nix
+          ./modules/system/graphical
 
           home-manager.nixosModules.home-manager
           {

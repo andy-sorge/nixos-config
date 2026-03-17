@@ -3,7 +3,7 @@
   imports = [
     ../../modules/home/common.nix
     ../../modules/home/hyprland.nix
-    ../../modules/home/plasma.nix
+    ../../modules/home/plasma
     
     ../../modules/home/cli.nix
     ../../modules/home/graphical.nix
