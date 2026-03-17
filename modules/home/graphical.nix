@@ -2,13 +2,17 @@
 {
   home.packages = with pkgs; [
     kitty
-    google-chrome
     ungoogled-chromium
     spotify
     remmina
-    chirp
     blender
     legcord
+    signal-desktop
+    libreoffice
+    
+    # niri stuff
+    alacritty
+    fuzzel
     
     nerd-fonts.jetbrains-mono
   ];
