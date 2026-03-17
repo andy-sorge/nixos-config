@@ -64,6 +64,7 @@
     zip
     unzip
     file
+    usbutils
   ];
 
   programs.zsh.enable = true;
