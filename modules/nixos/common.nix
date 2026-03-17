@@ -65,6 +65,7 @@
     unzip
     file
     usbutils
+    tree
   ];
 
   programs.zsh.enable = true;
