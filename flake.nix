@@ -21,6 +21,11 @@
     };
 
     vicinae.url = "github:vicinaehq/vicinae";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -30,8 +35,9 @@
       home-manager,
       plasma-manager,
       vicinae,
+      spicetify-nix,
       ...
-    }:
+    }@inputs:
     {
       nixosConfigurations.brandon = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -47,10 +53,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.asorge = {
               imports = [
                 ./hosts/brandon/home.nix
                 vicinae.homeManagerModules.default
+                spicetify-nix.homeManagerModules.spicetify
                 plasma-manager.homeManagerModules.plasma-manager # change homeManagerModules -> homeModules at some point
               ];
             };
