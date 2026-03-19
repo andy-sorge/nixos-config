@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+window#waybar {
+  background: none;
+}
+
+/* ------ Modules Left ------ */
+.modules-left {
+  padding-left: 6px;
+}
+
+#clock,
+#cpu,
+#custom-icon,
+#idle_inhibitor,
+#memory {
+  padding: 0px 8px;
+  margin: 0px 2px;
+}
+
+#custom-icon {
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#clock {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#idle_inhibitor {
+  padding: 0px 8px;
+  font-size: 16px;
+}
+
+/* ------ Modules Right/Center ------ */
+.modules-center,
+.modules-right {
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+#backlight,
+#battery,
+#language,
+#network,
+#systray,
+#wireplumber {
+  padding: 0px 8px;
+  margin: 0px 2px;
+}
+
+#custom-tray_arrow {
+  font-size: 16px;
+}
+
+#tray {
+  padding-left: 10px;
+}
+
+tooltip {
+  background: @surface;
+  border: 1px solid @on_surface;
+}

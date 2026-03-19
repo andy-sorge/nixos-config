@@ -2,11 +2,10 @@
 {
   imports = [
     ../../modules/home/common.nix
-    ../../modules/home/hyprland.nix
-    ../../modules/home/plasma
+    ../../modules/home/graphical
     
     ../../modules/home/cli.nix
-    ../../modules/home/graphical.nix
+    ../../modules/home/gui-apps.nix
     
     ../../modules/home/cyber.nix
     ../../modules/home/development.nix

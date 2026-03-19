@@ -11,27 +11,27 @@
     "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
 
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    kate
-    konsole
-    elisa
-    khelpcenter
-    krunner
-  ];
+  # services.desktopManager.plasma6.enable = true;
+  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  #   kate
+  #   konsole
+  #   elisa
+  #   khelpcenter
+  #   krunner
+  # ];
   
   environment.sessionVariables = {
-    # QT_QPA_PLATFORMTHEME = "qt6ct";
-    QT_STYLE_OVERRIDE = "breeze";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
   };
   
   environment.systemPackages = with pkgs; [
-    kdePackages.print-manager
+    # kdePackages.print-manager
     system-config-printer
   ];
   
@@ -66,6 +66,8 @@
   };
   
   services.printing.enable = true;
+  
+  security.pam.services.login.kwallet.enable = true;
 
   users.users.asorge.extraGroups = [
     "video"

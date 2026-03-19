@@ -1,5 +1,10 @@
 { pkgs, lib, config, ... }:
 {
+  imports = [
+    ./panels.nix
+    ./shortcuts.nix
+  ];
+  
   programs.plasma = {
     enable = true;
     configFile = {
@@ -75,7 +80,6 @@
     
     # remove when fixed in plasma-manager
     startup.desktopScript."panels" = {
-      text = "";
       preCommands = lib.mkForce ''
         sleep 3
         [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc

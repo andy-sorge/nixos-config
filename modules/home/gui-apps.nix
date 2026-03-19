@@ -1,21 +1,26 @@
-{pkgs, ...}:
-{
+{pkgs, inputs, ...}:
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in {
   home.packages = with pkgs; [
     kitty
     ungoogled-chromium
-    spotify
+    # spotify
+    
     remmina
     blender
     legcord
     signal-desktop
     libreoffice
-    
-    # niri stuff
-    alacritty
-    fuzzel
+    zoom-us
     
     nerd-fonts.jetbrains-mono
   ];
+  
+  programs.spicetify = {
+      enable = true;
+      theme = spicePkgs.themes.onepunch;
+    };
   
   services.vicinae = {
     enable = true;
