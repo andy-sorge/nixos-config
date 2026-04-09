@@ -16,11 +16,11 @@
       c = "clear";
       e = "exit";
       init = "f() { mkdir -p $2 && cd $2 && nix flake init -t github:andy-sorge/nix-templates#$1 && direnv allow && git init };f";
-      ".." = "cd ..";
       rr = "rm -rf";
       watch = "watch -n 0.1";
       z = "zeditor .";
-      nuke = "sudo rm -rf";
+      nuke = "rm -rf";
+      s = "kitten ssh";
     };
     profileExtra = ''
       . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
