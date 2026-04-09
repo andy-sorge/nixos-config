@@ -48,7 +48,6 @@
 
         "custom/icon" = {
           format = "";
-          on-click = "fuzzel";
           tooltip = false;
         };
         
