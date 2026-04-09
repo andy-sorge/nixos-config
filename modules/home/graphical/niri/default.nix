@@ -2,11 +2,16 @@
 {
   imports = [
     ./mako
-    ./fuzzel
+    ./swayidle
+    ./swaylock
   ];
+  
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
   
   home.packages = with pkgs; [
     swaybg
+    swww
+    imagemagick
     
     xwayland-satellite
     
@@ -23,10 +28,8 @@
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ffmpegthumbs
     kdePackages.qtimageformats
+    kdePackages.ark
   ];
   
-  programs.swaylock.enable = true;
-  
-  services.swayidle.enable = true;
   services.polkit-gnome.enable = true;
 }
