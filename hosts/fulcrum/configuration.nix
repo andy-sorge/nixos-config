@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "brandon";
+  networking.hostName = "fulcrum";
 
   # dont touch this idiot
   system.stateVersion = "25.05";

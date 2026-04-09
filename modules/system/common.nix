@@ -12,11 +12,12 @@
     dates = "daily";
   };
   
-  users.users.asorge = {
+  users.users.andy = {
     isNormalUser = true;
     description = "Andy Sorge";
     extraGroups = [
       "networkmanager"
+      "input"
       "wheel"
       "wireshark"
     ];
@@ -29,7 +30,7 @@
 
   nix.settings.trusted-users = [
     "root"
-    "asorge"
+    "andy"
   ];
 
   networking.networkmanager.enable = true;
@@ -69,7 +70,7 @@
   ];
 
   programs.zsh.enable = true;
-  users.users.asorge = {
+  users.users.andy = {
     shell = pkgs.zsh;
   };
 

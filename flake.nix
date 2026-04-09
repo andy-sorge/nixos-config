@@ -34,19 +34,23 @@
       nixpkgs,
       home-manager,
       plasma-manager,
+      nixvim,
       vicinae,
       spicetify-nix,
       ...
     }@inputs:
     {
-      nixosConfigurations.brandon = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fulcrum = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/brandon/configuration.nix
+          ./hosts/fulcrum/configuration.nix
 
           ./modules/system/common.nix
           ./modules/system/laptop.nix
           ./modules/system/graphical
+          
+          ./modules/system/viceroy.nix
+          ./modules/system/ros.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -54,12 +58,13 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.asorge = {
+            home-manager.users.andy = {
               imports = [
-                ./hosts/brandon/home.nix
+                ./hosts/fulcrum/home.nix
                 vicinae.homeManagerModules.default
                 spicetify-nix.homeManagerModules.spicetify
                 plasma-manager.homeManagerModules.plasma-manager # change homeManagerModules -> homeModules at some point
+                nixvim.homeManagerModules.default
               ];
             };
           }

@@ -69,7 +69,7 @@
   
   security.pam.services.login.kwallet.enable = true;
 
-  users.users.asorge.extraGroups = [
+  users.users.andy.extraGroups = [
     "video"
     "audio"
   ];
