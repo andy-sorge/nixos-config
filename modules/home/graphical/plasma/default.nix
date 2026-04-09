@@ -55,9 +55,9 @@
       kdeglobals.WM.inactiveBlend = "60,56,54";
       kdeglobals.WM.inactiveForeground = "204,190,155";
       kscreenlockerrc.Daemon.Timeout = 2;
-      kscreenlockerrc."Greeter/Wallpaper/org.kde.image/General".Image = "/home/asorge/wallpaper.jpg";
+      kscreenlockerrc."Greeter/Wallpaper/org.kde.image/General".Image = "/home/andy/wallpaper.jpg";
       kscreenlockerrc."Greeter/Wallpaper/org.kde.image/General".PreviewImage =
-        "/home/asorge/wallpaper.jpg";
+        "/home/andy/wallpaper.jpg";
       ksplashrc.KSplash.Theme = "org.kde.breeze.desktop";
       kwalletrc.Wallet."First Use" = false;
       kwinrc.Desktops.Id_1 = "eac510d4-f3c8-40a5-93bd-ee272aab5d12";
@@ -70,7 +70,7 @@
         "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       kwinrc.Xwayland.Scale = 1;
       plasma-localerc.Formats.LANG = "en_US.UTF-8";
-      plasmarc.Wallpapers.usersWallpapers = "/home/asorge/wallpaper.jpg";
+      plasmarc.Wallpapers.usersWallpapers = "/home/andy/wallpaper.jpg";
       spectaclerc.ImageSave.translatedScreenshotsFolder = "Screenshots";
       spectaclerc.VideoSave.translatedScreencastsFolder = "Screencasts";
     };
