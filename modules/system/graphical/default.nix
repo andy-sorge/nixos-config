@@ -1,14 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
-  
+
   programs.niri.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde pkgs.xdg-desktop-portal-gnome ];
+  };
   xdg.portal.config.niri = {
+    "org.freedesktop.impl.portal.Access" = [ "gtk" ];
     "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+    "org.freedesktop.impl.portal.Secret" = lib.mkForce [ "kde" ];
   };
 
   # programs.hyprland = {
@@ -24,17 +30,19 @@
   #   khelpcenter
   #   krunner
   # ];
-  
+
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
   };
-  
+
   environment.systemPackages = with pkgs; [
     # kdePackages.print-manager
     system-config-printer
+    kdePackages.kwallet
+    kdePackages.kwalletmanager
   ];
-  
+
   services.greetd = {
     enable = true;
     settings = {
@@ -64,10 +72,20 @@
     pulse.enable = true;
     # wireplumber.enable = true; # WirePlumber is default now
   };
-  
+
   services.printing.enable = true;
-  
+
+  security.pam.services = {
+    login.fprintAuth = false;
+    sddm.fprintAuth = false;
+    greetd.fprintAuth = false;
+  };
   security.pam.services.login.kwallet.enable = true;
+  security.pam.services.greetd.kwallet.enable = true;
+  security.pam.services.swaylock = {
+    
+  };
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
 
   users.users.andy.extraGroups = [
     "video"
