@@ -5,14 +5,16 @@ in {
   home.packages = with pkgs; [
     kitty
     ungoogled-chromium
-    # spotify
-    
     remmina
     blender
     legcord
     signal-desktop
     libreoffice
     zoom-us
+    slack
+    
+    meshlab
+    orca-slicer
     
     nerd-fonts.jetbrains-mono
   ];

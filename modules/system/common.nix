@@ -58,12 +58,14 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    neovim
+    # neovim
+    ripgrep
     wget
     git
     net-tools
     zip
     unzip
+    libarchive
     file
     usbutils
     tree
