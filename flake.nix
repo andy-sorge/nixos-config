@@ -62,9 +62,9 @@
               imports = [
                 ./hosts/fulcrum/home.nix
                 vicinae.homeManagerModules.default
-                spicetify-nix.homeManagerModules.spicetify
-                plasma-manager.homeManagerModules.plasma-manager # change homeManagerModules -> homeModules at some point
-                nixvim.homeManagerModules.default
+                spicetify-nix.homeManagerModules.default
+                plasma-manager.homeModules.plasma-manager
+                nixvim.homeModules.default
               ];
             };
           }

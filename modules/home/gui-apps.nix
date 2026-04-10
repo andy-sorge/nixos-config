@@ -1,6 +1,6 @@
 {pkgs, inputs, ...}:
 let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   home.packages = with pkgs; [
     kitty
@@ -20,9 +20,9 @@ in {
   ];
   
   programs.spicetify = {
-      enable = true;
-      theme = spicePkgs.themes.onepunch;
-    };
+    enable = true;
+    theme = spicePkgs.themes.onepunch;
+  };
   
   services.vicinae = {
     enable = true;
