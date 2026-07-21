@@ -6,7 +6,7 @@
     '';
     systemd = {
       enable = true;
-      target = "graphical-session.target";
+      # targets = [ config.wayland.systemd.target ];
     };
     settings = {
       mainBar = {
@@ -58,7 +58,7 @@
         };
 
         "clock" = {
-          format = "󰥔 {:%H:%M}";
+          format = "󰥔 {:%I:%M}";
           format-alt = "󰃭 {:%d.%m.%Y}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
