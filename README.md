@@ -7,6 +7,7 @@ This is my personal NixOS and Home Manager config.
 - [ ] Modular Desktop Environments
   - [ ] Plasma
   - [ ] Niri
+    - [ ] wallpapers
   - [ ] COSMIC (eventually)
 - [ ] Unified secrets service
 - [ ] Usable shell
@@ -27,3 +28,4 @@ This is my personal NixOS and Home Manager config.
 - [ ] Waybar
 - [ ] Swap
 - [ ] Disk partitioning
+- [ ] Kitty config
