@@ -13,10 +13,16 @@
     swww
     imagemagick
     
+    iwgtk
+    impala
+    
     xwayland-satellite
+    
+    inter
     
     # dolphin
     kdePackages.dolphin
+    kdePackages.dolphin-plugins
     kdePackages.qtsvg
     kdePackages.kio
     kdePackages.kio-fuse
@@ -32,4 +38,16 @@
   ];
   
   services.polkit-gnome.enable = true;
+  
+  fonts.fontconfig.enableProfileFonts = true;
+  
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = "org.kde.gwenview.desktop";
+      "image/jpg" = "org.kde.gwenview.desktop";
+      "image/jpeg" = "org.kde.gwenview.desktop";
+      "application/pdf" = "";
+    };
+  };
 }
