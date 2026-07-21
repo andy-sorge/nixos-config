@@ -49,7 +49,7 @@
           ./modules/system/laptop.nix
           ./modules/system/graphical
           
-          ./modules/system/viceroy.nix
+          ./modules/system/steam.nix
           ./modules/system/ros.nix
 
           home-manager.nixosModules.home-manager
