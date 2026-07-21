@@ -33,7 +33,22 @@
     "andy"
   ];
 
-  networking.networkmanager.enable = true;
+  # networking.wireless.iwd = {
+  #   enable = true;
+  #   settings = {
+  #     General.EnableNetworkConfiguration = true;
+  #     General.AddressRandomization = "network";
+  #     Network.EnableIPv6 = true;
+  #     Settings.AutoConnect = true;
+  #   };
+  # };
+  
+  services.resolved.enable = true;
+  
+  networking.networkmanager = {
+    enable = true;
+    # wifi.backend = "iwd";
+  };
 
   time.timeZone = "America/Los_Angeles";
 
@@ -62,6 +77,7 @@
     ripgrep
     wget
     git
+    git-lfs
     net-tools
     zip
     unzip
