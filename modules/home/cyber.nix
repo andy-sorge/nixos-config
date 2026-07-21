@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # e&e
     metasploit
-    armitage
+    # armitage
     dig
     sslscan
     evil-winrm
