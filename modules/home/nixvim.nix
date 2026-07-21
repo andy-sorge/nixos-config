@@ -8,9 +8,6 @@
     plugins.coq-nvim = {
       enable = true;
       autoLoad = true;
-      settings = {
-        auto_start = true;
-      };
     };
     
     plugins.lsp = {
