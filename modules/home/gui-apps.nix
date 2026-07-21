@@ -12,6 +12,12 @@ in {
     libreoffice
     zoom-us
     slack
+    obsidian
+    
+    vlc
+    krita
+    
+    kdePackages.gwenview
     
     meshlab
     orca-slicer
