@@ -15,7 +15,7 @@
       update-reboot = "sudo nixos-rebuild boot && sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system && sudo nix-collect-garbage -d";
       c = "clear";
       e = "exit";
-      init = "f() { mkdir -p $2 && cd $2 && nix flake init -t github:andy-sorge/nix-templates#$1 && direnv allow && git init };f";
+      flake-init = "f() { mkdir -p $2 && cd $2 && nix flake init -t github:andy-sorge/nix-templates#$1 && git init && git add flake.nix && direnv allow };f";
       rr = "rm -rf";
       watch = "watch -n 0.1";
       z = "zeditor .";
@@ -32,6 +32,12 @@
       "rm *"
       "pkill *"
       "cp *"
+      "reboot"
     ];
+    
+    initContent = ''
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
+    '';
   };
 }
