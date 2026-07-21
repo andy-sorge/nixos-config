@@ -1,41 +1,29 @@
-# nixos-config
+# NixOS Config
 
-will soon be expanded to encompass all my devices.
+This is my personal NixOS and Home Manager config.
 
-```
-.
-├── hosts
-│   └── fulcrum
-├── modules
-│   ├── home
-│   │   ├── graphical
-│   │   │   ├── niri
-│   │   │   │   ├── mako
-│   │   │   │   ├── swayidle
-│   │   │   │   └── swaylock
-│   │   │   ├── plasma
-│   │   │   └── waybar
-│   │   └── zsh
-│   └── system
-│       └── graphical
-└── wallpapers
-```
+## Goals
 
-## todo
-
-in no particular order
-
-- [ ] hibernate
-- [ ] swap
-- [ ] make waybar look better
-- [ ] make mako look better
-- [ ] per-host power settings
-- [ ] zed config
-- [ ] nvim config
-- [ ] vicinae config
-- [ ] dynamic wallpaper
-- [ ] qt config
-- [ ] easier module switching for hosts
-- [ ] organize flake
-- [ ] jetbrains config
-- [ ] secrets with sops
+- [ ] Modular Desktop Environments
+  - [ ] Plasma
+  - [ ] Niri
+  - [ ] COSMIC (eventually)
+- [ ] Unified secrets service
+- [ ] Usable shell
+  - [ ] Works correctly in Nix environments
+  - [ ] Fast startup
+  - [ ] Git info in prompt
+- [ ] SOPS set up
+- [ ] Reliable wifi
+- [ ] Uniform keyboard shortcuts
+- [ ] NixVim config
+  - [ ] LSP
+  - [ ] Suggestions + tab complete
+  - [ ] Directory panel
+- [ ] Offline nix builds
+- [ ] Printing
+- [ ] Per-host power settings
+- [ ] Zed config
+- [ ] Waybar
+- [ ] Swap
+- [ ] Disk partitioning
