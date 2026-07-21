@@ -29,12 +29,12 @@ text-color=#ebdbb2
 width=300
 
 # maximum height of notification( value in px )
-height=100
+height=200
 
 # margin of notification which is margin for the list of notification block( value in px ).
-outer-margin=1
+outer-margin=0
 # Margin of each individual notification
-margin=0
+margin=16
 
 # Set padding on each side to the size specified by directional( value in px )
 padding=10
@@ -79,7 +79,7 @@ format= <b>%s</b>\n%b
 text-alignment=center
 
 # Set the default timeout to timeout in milliseconds.
-default-timeout=7000
+default-timeout=5000
 
 # If set, mako will ignore the expire timeout(value: 0|1 )
 ignore-timeout=0
