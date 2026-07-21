@@ -40,35 +40,67 @@
       ...
     }@inputs:
     {
-      nixosConfigurations.fulcrum = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/fulcrum/configuration.nix
+      nixosConfigurations = {
+        fulcrum = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/fulcrum/configuration.nix
+  
+            ./modules/system/common.nix
+            ./modules/system/laptop.nix
+            ./modules/system/graphical
+            
+            ./modules/system/steam.nix
+            ./modules/system/ros.nix
+  
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.andy = {
+                imports = [
+                  ./hosts/fulcrum/home.nix
+                  vicinae.homeManagerModules.default
+                  spicetify-nix.homeManagerModules.default
+                  plasma-manager.homeModules.plasma-manager
+                  nixvim.homeModules.default
+                ];
+              };
+            }
+          ];
+        };
 
-          ./modules/system/common.nix
-          ./modules/system/laptop.nix
-          ./modules/system/graphical
-          
-          ./modules/system/steam.nix
-          ./modules/system/ros.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.andy = {
-              imports = [
-                ./hosts/fulcrum/home.nix
-                vicinae.homeManagerModules.default
-                spicetify-nix.homeManagerModules.default
-                plasma-manager.homeModules.plasma-manager
-                nixvim.homeModules.default
-              ];
-            };
-          }
-        ];
+        backfire = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/backfire/configuration.nix
+  
+            ./modules/system/common.nix
+            ./modules/system/graphical
+            
+            ./modules/system/steam.nix
+            ./modules/system/ros.nix
+  
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.andy = {
+                imports = [
+                  ./hosts/backfire/home.nix
+                  vicinae.homeManagerModules.default
+                  spicetify-nix.homeManagerModules.default
+                  plasma-manager.homeModules.plasma-manager
+                  nixvim.homeModules.default
+                ];
+              };
+            }
+          ];
+        };
       };
     };
 }
