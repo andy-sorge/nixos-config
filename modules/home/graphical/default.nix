@@ -1,11 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     # ./plasma
     ./niri
     ./waybar
   ];
-  
-  # just in case lol
-  services.gnome-keyring.enable = false;
 }
