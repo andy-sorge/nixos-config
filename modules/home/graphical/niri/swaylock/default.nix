@@ -40,7 +40,7 @@
   programs.swaylock = {
     enable = true;
     settings = {
-      image="~/wallpapers/0_gruv.jpg";
+      image="/etc/nixos/wallpapers/0_gruv.jpg";
     };
   };
 }
