@@ -10,7 +10,7 @@
   
   home.packages = with pkgs; [
     swaybg
-    swww
+    awww
     imagemagick
     
     iwgtk
@@ -39,7 +39,7 @@
   
   services.polkit-gnome.enable = true;
   
-  fonts.fontconfig.enableProfileFonts = true;
+  fonts.fontconfig.enable = true;
   
   xdg.mimeApps = {
     enable = true;
