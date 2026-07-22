@@ -108,6 +108,14 @@ output "eDP-1" {
     position x=1280 y=0
 }
 
+output "DP-4" {
+    mode "2560x1440@240.001"
+    scale 1
+    variable-refresh-rate on-demand=true
+    focus-at-startup
+    transform "normal"
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
