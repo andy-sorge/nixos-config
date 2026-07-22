@@ -29,3 +29,4 @@ This is my personal NixOS and Home Manager config.
 - [ ] Swap
 - [ ] Disk partitioning
 - [ ] Kitty config
+- [ ] Git config
