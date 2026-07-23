@@ -2,7 +2,6 @@
 {
   programs.nixvim = {
     enable = true;
-    nixpkgs.source = "flake";
 
     colorschemes.gruvbox.enable = true;
     plugins.lualine.enable = true;
