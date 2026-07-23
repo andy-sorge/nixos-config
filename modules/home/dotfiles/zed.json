@@ -1,0 +1,67 @@
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "ssh_connections": [
+    {
+      "host": "192.168.194.1",
+      "username": "robosub",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/robosub/guppy"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "guppy",
+      "username": "robosub",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/robosub/guppy"
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 300
+    }
+  },
+  "disable_ai": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "inlay_hints": {
+    "show_parameter_hints": true,
+    "show_type_hints": true,
+    "show_value_hints": true,
+    "show_other_hints": true
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "Gruvbox Dark",
+}

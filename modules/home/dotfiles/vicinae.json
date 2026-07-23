@@ -1,0 +1,99 @@
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "close_on_focus_loss": true,
+   "pop_to_root_on_close": false,
+   "font": {
+      "normal": {
+         "family": "JetBrainsMono Nerd Font"
+      }
+   },
+   "theme": {
+      "dark": {
+         "name": "gruvbox-dark",
+         "icon_theme": "Gruvbox Plus Dark"
+      }
+   },
+   "telemetry": {
+      "system_info": false
+   },
+   "launcher_window": {
+      "opacity": 0.8,
+      "client_side_decorations": {
+         "enabled": true
+      },
+      "compact_mode": {
+         "enabled": true
+      },
+      "material": "blur"
+   },
+   "favorites": [
+      "applications:dev.zed.Zed",
+      "applications:chromium-browser",
+      "applications:kitty",
+      "applications:org.kde.dolphin",
+      "clipboard:history"
+   ],
+   "providers": {
+      "applications": {
+         "entrypoints": {
+            "legcord": {
+               "alias": "Discord"
+            },
+            "vicinae": {
+               "enabled": false
+            }
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "about": {
+               "enabled": false
+            },
+            "documentation": {
+               "enabled": false
+            },
+            "report-bug": {
+               "enabled": false
+            },
+            "sponsor": {
+               "enabled": false
+            }
+         }
+      },
+      "developer": {
+         "entrypoints": {
+            "create": {
+               "enabled": false
+            }
+         }
+      },
+      "system": {
+         "entrypoints": {
+            "browse-apps": {
+               "enabled": true
+            },
+            "volume-0": {
+               "enabled": false
+            },
+            "volume-100": {
+               "enabled": false
+            },
+            "volume-25": {
+               "enabled": false
+            },
+            "volume-50": {
+               "enabled": false
+            },
+            "volume-75": {
+               "enabled": false
+            },
+            "volume-down": {
+               "enabled": false
+            },
+            "volume-up": {
+               "enabled": false
+            }
+         }
+      }
+   }
+}

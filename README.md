@@ -30,3 +30,4 @@ This is my personal NixOS and Home Manager config.
 - [ ] Disk partitioning
 - [ ] Kitty config
 - [ ] Git config
+- [ ] Vicinae config
