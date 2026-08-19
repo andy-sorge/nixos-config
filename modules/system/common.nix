@@ -50,6 +50,11 @@
     # wifi.backend = "iwd";
   };
 
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
+
   time.timeZone = "America/Los_Angeles";
 
   i18n.defaultLocale = "en_US.UTF-8";
