@@ -82,6 +82,7 @@
             
             ./modules/system/steam.nix
             ./modules/system/ros.nix
+            ./modules/system/docker.nix
   
             home-manager.nixosModules.home-manager
             {
