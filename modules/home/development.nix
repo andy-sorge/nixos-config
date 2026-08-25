@@ -6,7 +6,6 @@
 
     # editors
     zed-editor
-    vscode
 
     # nix
     nil
