@@ -35,6 +35,8 @@
     kdePackages.ffmpegthumbs
     kdePackages.qtimageformats
     kdePackages.ark
+
+    pulseaudio
   ];
   
   services.polkit-gnome.enable = true;
