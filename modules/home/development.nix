@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, ... }:
 {
   home.packages = with pkgs; [
     # utils
@@ -17,7 +17,7 @@
     enable = true;
   
     signing = {
-      key = "/home/andy/.ssh/id_ed25519_sk_rk.pub";
+      key = "/home/andy/.ssh/${osConfig.networking.hostName}.pub";
       signByDefault = true;
     };
   
