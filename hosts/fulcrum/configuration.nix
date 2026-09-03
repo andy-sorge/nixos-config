@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./power.nix
   ];
 
   networking.hostName = "fulcrum";

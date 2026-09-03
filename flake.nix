@@ -47,7 +47,6 @@
             ./hosts/fulcrum/configuration.nix
   
             ./modules/system/common.nix
-            ./modules/system/laptop.nix
             ./modules/system/graphical
             
             ./modules/system/steam.nix
