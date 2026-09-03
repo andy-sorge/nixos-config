@@ -90,11 +90,14 @@
     file
     usbutils
     tree
+    eza
+    bat
+    lm_sensors
   ];
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
   users.users.andy = {
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   programs.nix-ld = {
