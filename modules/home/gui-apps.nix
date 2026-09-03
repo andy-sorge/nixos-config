@@ -3,7 +3,6 @@ let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   home.packages = with pkgs; [
-    kitty
     ungoogled-chromium
     remmina
     blender
@@ -24,6 +23,15 @@ in {
     
     nerd-fonts.jetbrains-mono
   ];
+
+  programs.kitty = {
+    enable = true;
+    shellIntegration.enableFishIntegration = true;
+    settings = {
+      shell = "fish";
+    };
+    themeFile = "gruvbox-dark";
+  };
   
   programs.spicetify = {
     enable = true;
