@@ -63,5 +63,14 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
-  "theme": "Gruvbox Dark"
+  "theme": "Gruvbox Dark",
+  "lsp": {
+    "nil": {
+      "nix": {
+        "flake": {
+          "autoArchive": true
+        }
+      }
+    }
+  }
 }
