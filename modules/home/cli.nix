@@ -10,5 +10,6 @@
     btop
     sl
     asciiquarium
+    gum
   ];
 }
