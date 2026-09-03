@@ -279,6 +279,11 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
+layer-rule {
+    match namespace="waybar"
+    opacity 0.99
+}
+
 spawn-sh-at-startup "swaybg -i /etc/nixos/wallpapers/0_gruv.jpg -m fill"
 
 spawn-at-startup "awww-daemon"
