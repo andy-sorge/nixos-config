@@ -8,6 +8,9 @@
     ../../modules/home/gui-apps.nix
     ../../modules/home/jetbrains.nix
     ../../modules/home/nixvim.nix
+    ../../modules/home/vscode.nix
+    ../../modules/home/ssh.nix
+    ../../modules/home/fish.nix
     
     ../../modules/home/cyber.nix
     ../../modules/home/development.nix
