@@ -2,9 +2,8 @@
 {
   virtualisation.docker = {
     enable = true;
-    enableNvidia = true;
     daemon.settings.features.cdi = true;
   };
 
-  hardware.nvidia-container-toolkit.enable = true;
+  users.users.andy.extraGroups = [ "docker" ];
 }

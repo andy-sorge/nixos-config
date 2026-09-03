@@ -21,6 +21,10 @@
     nvidiaSettings = true;
   };
 
+  # for docker
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.enableNvidia = true;
+
   # dont touch this idiot
   system.stateVersion = "25.05";
 }
