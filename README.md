@@ -25,9 +25,10 @@ This is my personal NixOS and Home Manager config.
 - [ ] Printing
 - [ ] Per-host power settings
 - [ ] Zed config
-- [ ] Waybar
+- [x] Waybar
 - [ ] Swap
 - [ ] Disk partitioning
-- [ ] Kitty config
-- [ ] Git config
+- [x] Kitty config
+- [x] Git config
 - [ ] Vicinae config
+- [ ] VSCode config
