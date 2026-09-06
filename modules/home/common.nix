@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./zsh
+    ./fish
   ];
   
   programs.direnv = {

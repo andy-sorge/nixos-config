@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  import = [
+    ./functions.nix
+  ];
+  
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -10,7 +14,7 @@
     enable = true;
     interactiveShellInit = ''
       set -g fish_greeting
-      # fastfetch
+      fastfetch
     '';
 
     plugins = [
@@ -22,7 +26,7 @@
       # utils
       l = "eza -a --group-directories-first";
       ls = "eza -la --icons --no-filesize --group-directories-first";
-      ll = "eza -la --icons --group-directories-first";
+      ll = "eza -la --icons --group-directories -first";
       ld = "eza -lD --icons --group-directories-first --no-filesize";
       lt = "eza --icons -TL 3";
       tree = "eza -T";
