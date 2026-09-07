@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot = {
@@ -93,6 +93,8 @@
     eza
     bat
     lm_sensors
+    sops
+    age
   ];
 
   programs.fish.enable = true;
@@ -111,13 +113,20 @@
   
   programs.wireshark.enable = true;
 
+  sops = {
+    defaultSopsFile = ../../secrets/common.yaml;
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  };
+
   nix.settings = {
     extra-substituters = [
       "https://vicinae.cachix.org"
+      "https://andy-sorge.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+      "andy-sorge.cachix.org-1:Uh7vbC5NjkgMZXEDSxHtCgL2KXZhOTeMoqIUZK7/7F0="
     ];
   };
 }

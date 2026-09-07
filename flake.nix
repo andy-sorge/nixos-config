@@ -26,6 +26,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,6 +42,7 @@
       nixvim,
       vicinae,
       spicetify-nix,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -44,6 +50,7 @@
         fulcrum = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            sops-nix.nixosModules.sops
             ./hosts/fulcrum/configuration.nix
   
             ./modules/system/common.nix
@@ -75,7 +82,9 @@
         backfire = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            sops-nix.nixosModules.sops
             ./hosts/backfire/configuration.nix
+            ./modules/system/cachix.nix
   
             ./modules/system/common.nix
             ./modules/system/graphical
