@@ -1,4 +1,4 @@
-{}:
+{ ... }:
 {
   programs.fish.functions = {
     flake_init = ''
