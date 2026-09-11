@@ -12,6 +12,7 @@ in {
     zoom-us
     slack
     obsidian
+    bluebubbles
     
     vlc
     krita
