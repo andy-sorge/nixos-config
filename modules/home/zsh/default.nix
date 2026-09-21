@@ -1,43 +1,74 @@
 { pkgs, ... }:
 {
   imports = [
-    ./starship.nix
+    # ./starship.nix
   ];
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    options = [ "--cmd cd" ];
+  };
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    sessionVariables = {
+      ZOXIDE_CMD_OVERRIDE = "cd";
+      EDITOR = "nvim";
+    };
+    
     shellAliases = {
-      ll = "ls -al";
-      update = "sudo nixos-rebuild switch && sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system && sudo nix-collect-garbage -d";
-      update-reboot = "sudo nixos-rebuild boot && sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system && sudo nix-collect-garbage -d";
+      # utils
+      l = "eza -a --group-directories-first";
+      ls = "eza -la --icons --no-filesize --group-directories-first";
+      ll = "eza -la --icons --group-directories-first";
+      ld = "eza -lD --icons --group-directories-first --no-filesize";
+      lt = "eza --icons -TL 3";
+      tree = "eza -T";
+      grep = "grep --color=auto";
       c = "clear";
       e = "exit";
-      flake-init = "f() { mkdir -p $2 && cd $2 && nix flake init -t github:andy-sorge/nix-templates#$1 && git init && git add flake.nix && direnv allow };f";
       rr = "rm -rf";
       watch = "watch -n 0.1";
-      z = "zeditor .";
-      nuke = "rm -rf";
+      nuke = "sudo rm -rf";
       s = "kitten ssh";
+      
+      # nix specific
+      config = "zeditor ~/nixos-config";
+      ns = "nix-shell -p";
+
+      # scratch
+      scratch = "cd ~/.scratch";
+      sc = "scratch";
     };
-    profileExtra = ''
-      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-    '';
-    history.size = 10000;
-    history.ignoreAllDups = true;
-    history.path = "$HOME/.zsh_history";
-    history.ignorePatterns = [
-      "rm *"
-      "pkill *"
-      "cp *"
-      "reboot"
-    ];
+    
+    history = {
+      size = 10000;
+      ignoreAllDups = true;
+      path = "$HOME/.zsh_history";
+      ignorePatterns = [
+        "rm *"
+        "pkill *"
+        "cp *"
+        "reboot"
+        "exit"
+        "e"
+      ];
+    };
     
     initContent = ''
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
+      source ${./functions.zsh}
+    '';
+
+    loginExtra = ''
+      make_scratch
     '';
   };
 }
