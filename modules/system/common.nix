@@ -33,21 +33,21 @@
     "andy"
   ];
 
-  # networking.wireless.iwd = {
-  #   enable = true;
-  #   settings = {
-  #     General.EnableNetworkConfiguration = true;
-  #     General.AddressRandomization = "network";
-  #     Network.EnableIPv6 = true;
-  #     Settings.AutoConnect = true;
-  #   };
-  # };
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      General.EnableNetworkConfiguration = true;
+      General.AddressRandomization = "network";
+      Network.EnableIPv6 = true;
+      Settings.AutoConnect = true;
+    };
+  };
   
   services.resolved.enable = true;
   
   networking.networkmanager = {
     enable = true;
-    # wifi.backend = "iwd";
+    wifi.backend = "iwd";
   };
 
   services.openssh = {
