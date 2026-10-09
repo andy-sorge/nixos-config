@@ -2,7 +2,7 @@
 {
   imports = [
     ../../modules/home/common.nix
-    ../../modules/home/graphical
+    ../../modules/home/graphical/plasma
     
     ../../modules/home/cli.nix
     ../../modules/home/gui-apps.nix
