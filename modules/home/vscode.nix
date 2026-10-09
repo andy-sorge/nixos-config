@@ -15,6 +15,7 @@ let
     # remote
     ms-vscode-remote.vscode-remote-extensionpack
     ms-vscode.remote-explorer
+    ms-vscode-remote.remote-ssh
 
     # containers
     ms-azuretools.vscode-containers
@@ -53,6 +54,7 @@ in
           ms-python.debugpy
           ms-python.vscode-python-envs
           charliermarsh.ruff
+          ms-python.black-formatter
         ] ++ base_extensions;
       };
 
@@ -81,7 +83,8 @@ in
       ros2 = {
         extensions = with pkgs.vscode-extensions; [
           # cpp
-          ms-vscode.cpptools-extension-pack
+          # ms-vscode.cpptools
+          ms-vscode.cmake-tools
           llvm-vs-code-extensions.vscode-clangd
 
           # python
@@ -90,6 +93,7 @@ in
           ms-python.debugpy
           ms-python.vscode-python-envs
           charliermarsh.ruff
+          ms-python.black-formatter
 
           # ros2
           # ranch-hand-robotics.rde-ros-2
