@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   networking.firewall = {
     enable = true;
@@ -9,4 +9,8 @@
       { from = 7410; to = 7500; }
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    foxglove-studio
+  ];
 }
