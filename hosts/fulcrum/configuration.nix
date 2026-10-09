@@ -5,6 +5,8 @@
     ./power.nix
   ];
 
+  myDesktop = "plasma";
+
   networking.hostName = "fulcrum";
 
   # dont touch this idiot
