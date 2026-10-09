@@ -155,11 +155,7 @@
     plasmashell."switch to next activity" = [ ];
     plasmashell."switch to previous activity" = [ ];
     plasmashell."toggle do not disturb" = [ ];
-    "services/net.local.vicinae.desktop"._launch = "Alt+Space";
-    "services/org.kde.krunner.desktop"._launch = [
-      "Search"
-      "Alt+F2"
-    ];
+    "services/org.kde.krunner.desktop"._launch = [ ];
     "services/org.kde.spectacle.desktop".CurrentMonitorScreenShot = [ ];
     "services/org.kde.spectacle.desktop".OpenWithoutScreenshot = [ ];
   };

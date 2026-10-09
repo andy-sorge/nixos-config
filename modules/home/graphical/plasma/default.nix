@@ -17,8 +17,8 @@
       kcminputrc."Libinput/1267/12693/ELAN0676:00 04F3:3195 Touchpad".ClickMethod = 2;
       kcminputrc."Libinput/1267/12693/ELAN0676:00 04F3:3195 Touchpad".NaturalScroll = true;
       kcminputrc."Libinput/2/10/TPPS\\/2 Elan TrackPoint".PointerAccelerationProfile = 1;
-      kcminputrc.Mouse.cursorSize = 32;
-      kcminputrc.Mouse.cursorTheme = "Capitaine Cursors (Gruvbox)";
+      kcminputrc.Mouse.cursorSize = 18;
+      kcminputrc.Mouse.cursorTheme = "breeze_cursors";
       kded5rc.Module-device_automounter.autoload = false;
       kdeglobals.General.TerminalApplication = "kitty";
       kdeglobals.General.TerminalService = "kitty.desktop";
@@ -29,7 +29,7 @@
       kdeglobals.General.menuFont = "JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
       kdeglobals.General.smallestReadableFont = "JetBrainsMono Nerd Font,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
       kdeglobals.General.toolBarFont = "JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
-      kdeglobals.Icons.Theme = "Gruvbox-Plus-Dark";
+      kdeglobals.Icons.Theme = "breeze-dark";
       kdeglobals.KDE.contrast = 4;
       kdeglobals.KDE.frameContrast = 0.2;
       kdeglobals."KFileDialog Settings"."Allow Expansion" = false;
@@ -76,6 +76,12 @@
     };
     dataFile = {
 
+    };
+
+    hotkeys.commands."toggle-vicinae" = {
+      name = "Toggle Vicinae";
+      key = "Alt+Space";
+      command = "vicinae toggle";
     };
     
     # remove when fixed in plasma-manager
