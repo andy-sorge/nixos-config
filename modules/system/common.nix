@@ -6,12 +6,22 @@
     configurationLimit = 3;
   };
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
+    boot.kernelModules = [ "v4l2loopback" ];
+    boot.extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+    security.polkit.enable = true;
+    programs.obs-studio.enableVirtualCamera = true;
+
   nix.gc = {
     automatic = true;
     dates = "daily";
   };
-  
+
   users.users.andy = {
     isNormalUser = true;
     description = "Andy Sorge";
@@ -33,21 +43,21 @@
     "andy"
   ];
 
-  networking.wireless.iwd = {
-    enable = true;
-    settings = {
-      General.EnableNetworkConfiguration = true;
-      General.AddressRandomization = "network";
-      Network.EnableIPv6 = true;
-      Settings.AutoConnect = true;
-    };
-  };
-  
+#  networking.wireless.iwd = {
+#    enable = true;
+#    settings = {
+#      General.EnableNetworkConfiguration = true;
+#      General.AddressRandomization = "network";
+#      Network.EnableIPv6 = true;
+#      Settings.AutoConnect = true;
+#    };
+#  };
+
   services.resolved.enable = true;
-  
+
   networking.networkmanager = {
     enable = true;
-    wifi.backend = "iwd";
+#    wifi.backend = "iwd";
   };
 
   services.openssh = {
@@ -110,7 +120,7 @@
       openssl
     ];
   };
-  
+
   programs.wireshark.enable = true;
 
   sops = {
