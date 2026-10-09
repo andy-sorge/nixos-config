@@ -45,70 +45,62 @@
       sops-nix,
       ...
     }@inputs:
-    {
-      nixosConfigurations = {
-        fulcrum = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+    let
+      mkHost =
+        hostname:
+        {
+          system ? "x86_64-linux",
+          user ? "andy",
+          extraModules ? [ ],
+        }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = { inherit inputs system hostname user; };
+
           modules = [
-            sops-nix.nixosModules.sops
-            ./hosts/fulcrum/configuration.nix
-  
             ./modules/system/common.nix
+            ./hosts/${hostname}/configuration.nix
             ./modules/system/graphical
-            
-            ./modules/system/steam.nix
-            ./modules/system/ros.nix
-            ./modules/system/docker.nix
-  
+
+            sops-nix.nixosModules.sops
+
+            { networking.hostName = hostname;}
+
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.andy = {
-                imports = [
-                  ./hosts/fulcrum/home.nix
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+                extraSpecialArgs = { inherit inputs; };
+                sharedModules = [
                   vicinae.homeManagerModules.default
                   spicetify-nix.homeManagerModules.default
                   plasma-manager.homeModules.plasma-manager
                   nixvim.homeModules.default
                 ];
+                users.${user}.imports = [ ./hosts/${hostname}/home.nix ];
               };
             }
+          ] ++ extraModules;
+        };
+    in
+    {
+      nixosConfigurations = {
+        fulcrum = mkHost "fulcrum" {
+          extraModules = [
+            ./modules/system/steam.nix
+            ./modules/system/ros.nix
+            ./modules/system/docker.nix
           ];
         };
 
-        backfire = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            sops-nix.nixosModules.sops
-            ./hosts/backfire/configuration.nix
-            ./modules/system/cachix.nix
-  
-            ./modules/system/common.nix
-            ./modules/system/graphical
-            
+        backfire = mkHost "backfire" {
+          extraModules = [
             ./modules/system/steam.nix
             ./modules/system/ros.nix
             ./modules/system/docker.nix
-  
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.andy = {
-                imports = [
-                  ./hosts/backfire/home.nix
-                  vicinae.homeManagerModules.default
-                  spicetify-nix.homeManagerModules.default
-                  plasma-manager.homeModules.plasma-manager
-                  nixvim.homeModules.default
-                ];
-              };
-            }
           ];
         };
       };
