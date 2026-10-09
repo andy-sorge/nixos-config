@@ -15,6 +15,7 @@
 
   programs.git = {
     enable = true;
+    lfs.enable = true;
   
     signing = {
       key = "/home/andy/.ssh/${osConfig.networking.hostName}.pub";
@@ -29,22 +30,14 @@
       
       gpg.format = "ssh";
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
   
-      filter.lfs = {
-        clean = "git-lfs clean -- %f";
-        smudge = "git-lfs smudge -- %f";
-        process = "git-lfs filter-process";
-        required = true;
-      };
-  
-      credential."https://github.com".helper = [
-        ""
-        "!/etc/profiles/per-user/andy/bin/gh auth git-credential"
-      ];
-      credential."https://gist.github.com".helper = [
-        ""
-        "!/etc/profiles/per-user/andy/bin/gh auth git-credential"
-      ];
+      # filter.lfs = {
+      #    clean = "git-lfs clean -- %f";
+      #   smudge = "git-lfs smudge -- %f";
+      #   process = "git-lfs filter-process";
+      #   required = true;
+      # };
     };
   };
 }
