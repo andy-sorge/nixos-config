@@ -23,6 +23,9 @@ in {
 
     meshlab
     orca-slicer
+    bambu-studio
+
+    mars-mips
 
     nerd-fonts.jetbrains-mono
   ];

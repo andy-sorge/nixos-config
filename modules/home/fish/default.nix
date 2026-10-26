@@ -19,6 +19,7 @@
     plugins = [
       { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+      { name = "bass"; src = pkgs.fishPlugins.bass.src; }
     ];
 
     shellAliases = {
