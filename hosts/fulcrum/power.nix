@@ -13,7 +13,7 @@
 
   # configurable power manager service
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       # cpu plans
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
@@ -45,7 +45,7 @@
   };
 
   # block if plasma enables, conflicts with tlp
-  services.power-profiles-daemon.enable = lib.mkForce false;
+  # services.power-profiles-daemon.enable = lib.mkForce false;
 
   services = {
     gvfs.enable = true;
